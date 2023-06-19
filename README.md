@@ -17,6 +17,8 @@ Console Commands
 The following functions have been wrapped into console commands.
 
 ```
+SetHealth (value)
+SetEnergy (value)
 RevealMap
 RefillVitals
 SetDetectable (on/oaff)

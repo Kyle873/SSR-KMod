@@ -1,3 +1,15 @@
+RegisterConsoleCommandGlobalHandler("SetHealth", function(FullCommand, Parameters, OutputDevice)
+	GetAttribs().Health:SetBaseValue(tonumber(Parameters[1]))
+	
+	return true
+end)
+
+RegisterConsoleCommandGlobalHandler("SetEnergy", function(FullCommand, Parameters, OutputDevice)
+	GetAttribs().Energy:SetBaseValue(tonumber(Parameters[1]))
+	
+	return true
+end)
+
 RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameters, OutputDevice)
 	GMSinglePlayer:CmdGrantItem(Parameters[1])
 	
