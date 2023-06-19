@@ -5,7 +5,7 @@ A Cheat/QoL/utility mod for the System Shock Remake.
 
 Installation
 ===
-1. Download and install [UE4SS](https://github.com/UE4SS-RE/RE-UE4SS).
+1. Download and install [UE4SS](https://github.com/UE4SS-RE/RE-UE4SS). You will specifically want the 2.x version.
 2. Clone this repo or extract a downloaded zip file into the Mods folder of the game's binary directory.
 
 Hotkeys
