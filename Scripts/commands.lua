@@ -10,8 +10,17 @@ RegisterConsoleCommandGlobalHandler("SetEnergy", function(FullCommand, Parameter
 	return true
 end)
 
+RegisterConsoleCommandGlobalHandler("SetItemSlotCount", function(FullCommand, Parameters, OutputDevice)
+	local slot = tonumber(Parameters[1])
+	local count = tonumber(Parameters[2])
+	
+	GetBag().ItemSlots[slot].Count = count
+	
+	return true
+end)
+
 RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameters, OutputDevice)
-	GMSinglePlayer:CmdGrantItem(Parameters[1])
+	CONHacker:GrantItem(Parameters[1])
 	
 	return true
 end)
