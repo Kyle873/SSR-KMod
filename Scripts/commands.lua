@@ -32,6 +32,7 @@ RegisterConsoleCommandGlobalHandler("SetItemSlotCount", function(FullCommand, Pa
 end)
 
 RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameters, OutputDevice)
+	-- TODO: Figure this shit out, what does it want to be passed exactly?
 	CONHacker:GrantItem(Parameters[1])
 	
 	return true
