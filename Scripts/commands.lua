@@ -4,8 +4,20 @@ RegisterConsoleCommandGlobalHandler("SetHealth", function(FullCommand, Parameter
 	return true
 end)
 
+RegisterConsoleCommandGlobalHandler("SetHealthMax", function(FullCommand, Parameters, OutputDevice)
+	GetAttribs().HealthMax:SetBaseValue(tonumber(Parameters[1]))
+	
+	return true
+end)
+
 RegisterConsoleCommandGlobalHandler("SetEnergy", function(FullCommand, Parameters, OutputDevice)
 	GetAttribs().Energy:SetBaseValue(tonumber(Parameters[1]))
+	
+	return true
+end)
+
+RegisterConsoleCommandGlobalHandler("SetEnergyMax", function(FullCommand, Parameters, OutputDevice)
+	GetAttribs().EnergyMax:SetBaseValue(tonumber(Parameters[1]))
 	
 	return true
 end)

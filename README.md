@@ -18,7 +18,9 @@ The following functions have been wrapped into console commands.
 
 ```
 SetHealth (value)
+SetHealthMax (value)
 SetEnergy (value)
+SetEnergyMax (value)
 SetItemSlotCount (slot) (count)
 RevealMap
 RefillVitals
