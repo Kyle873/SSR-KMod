@@ -18,3 +18,4 @@ end)
 -- Features
 require "qol"
 require "regen"
+require "cheats"

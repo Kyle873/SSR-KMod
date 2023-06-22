@@ -97,3 +97,9 @@ RegisterConsoleCommandGlobalHandler("KillCameras", function(FullCommand, Paramet
 	
 	return true
 end)
+
+RegisterConsoleCommandGlobalHandler("SetCombatIntensity", function(FullCommand, Parameters, OutputDevice)
+	GISinglePlayer:SetCurrentCombatIntensity(tonumber(Parameters[1]))	
+	
+	return true
+end)

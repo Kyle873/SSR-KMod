@@ -1,7 +1,7 @@
-HealthRegenEnabled = false
+HealthRegenEnabled = true
 HealthRegenDelay = 10000
-EnergyRegenEnabled = false
-EnerygRegenDelay = 1000
+EnergyRegenEnabled = true
+EnerygRegenDelay = 2000
 
 LoopAsync(HealthRegenDelay, function()
     if PAWNHackerImplant ~= nil and HealthRegenEnabled then
