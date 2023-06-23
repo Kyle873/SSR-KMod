@@ -38,9 +38,24 @@ RegisterConsoleCommandGlobalHandler("ToggleDebugCamera", function(FullCommand, P
 end)
 
 RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameters, OutputDevice)
-	-- TODO: Figure this shit out, what does it want to be passed exactly?
-	CONHacker:GrantItem(Parameters[1])
+	local obj = StaticFindObject(Parameters[1])
 	
+	if obj:IsValid() then
+		print(tostring(obj))
+		local class = obj:GetClass()
+		print(tostring(class))
+		local item =
+		{
+			["ItemClass_3_01EE21D44E1DD8DA5C524AB06895108B"] = class,
+			["Count_6_87A0BD234069F7B9A42C4580EC90AD3D"] = tonumber(Parameters[2]) or 1
+		}
+		local result = {}
+		
+		GetBag():GrantItem(item, result)
+	else
+		print("Could not find a UObject for " .. Parameters[1])
+	end
+
 	return true
 end)
 
