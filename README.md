@@ -11,6 +11,7 @@ Installation
 ```
 SSR-KMod : 1
 ```
+4. Once you are in-game, press Ctrl+R to refresh the mod and get it to acquire the object instances it needs to function.
 
 Hotkeys
 ===
