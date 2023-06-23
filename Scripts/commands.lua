@@ -38,6 +38,7 @@ RegisterConsoleCommandGlobalHandler("ToggleDebugCamera", function(FullCommand, P
 end)
 
 RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameters, OutputDevice)
+	--[[
 	local obj = StaticFindObject(Parameters[1])
 	
 	if obj:IsValid() then
@@ -55,18 +56,23 @@ RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameter
 	else
 		print("Could not find a UObject for " .. Parameters[1])
 	end
+	--]]
 
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("SpawnObject", function(FullCommand, Parameters, OutputDevice)
+	LoadAsset(Parameters[1])
+	
 	local obj = StaticFindObject(Parameters[1])
 	
 	if obj:IsValid() then
 		local pos = PAWNHackerImplant:K2_GetActorLocation()
 		local rot = { X = 0, Y = 0, Z = 0, W = 0 }
-		
-		CONHacker:GetWorld():SpawnActor(obj, pos, rot)
+
+		for i = 1, tonumber(Parameters[2]) or 1 do
+			CONHacker:GetWorld():SpawnActor(obj, pos, rot)
+		end
 	else
 		print("Could not find a UObject for " .. Parameters[1])
 	end

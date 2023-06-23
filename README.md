@@ -30,6 +30,7 @@ SetEnergy (value)
 SetEnergyMax (value)
 ToggleDebugCamera
 SetItemSlotCount (slot) (count)
+SpawnObject (fullClassName) (count)
 RevealMap
 RefillVitals
 SetDetectable (on/oaff)
