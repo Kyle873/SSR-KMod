@@ -31,6 +31,12 @@ RegisterConsoleCommandGlobalHandler("SetItemSlotCount", function(FullCommand, Pa
 	return true
 end)
 
+RegisterConsoleCommandGlobalHandler("ToggleDebugCamera", function(FullCommand, Parameters, OutputDevice)
+	GISinglePlayer:ToggleDebugCamera()
+	
+	return true
+end)
+
 RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameters, OutputDevice)
 	-- TODO: Figure this shit out, what does it want to be passed exactly?
 	CONHacker:GrantItem(Parameters[1])

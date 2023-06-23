@@ -28,6 +28,7 @@ SetHealth (value)
 SetHealthMax (value)
 SetEnergy (value)
 SetEnergyMax (value)
+ToggleDebugCamera
 SetItemSlotCount (slot) (count)
 RevealMap
 RefillVitals
