@@ -44,6 +44,21 @@ RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameter
 	return true
 end)
 
+RegisterConsoleCommandGlobalHandler("SpawnObject", function(FullCommand, Parameters, OutputDevice)
+	local obj = StaticFindObject(Parameters[1])
+	
+	if obj:IsValid() then
+		local pos = PAWNHackerImplant:K2_GetActorLocation()
+		local rot = { X = 0, Y = 0, Z = 0, W = 0 }
+		
+		CONHacker:GetWorld():SpawnActor(obj, pos, rot)
+	else
+		print("Could not find a UObject for " .. Parameters[1])
+	end
+	
+	return true
+end)
+
 RegisterConsoleCommandGlobalHandler("RevealMap", function(FullCommand, Parameters, OutputDevice)
 	CONHacker:RevealMap()
 	

@@ -1,3 +1,4 @@
+CheatsEnabled = false
 CheatUpdateDelay = 10
 
 RegisterKeyBind(Key.NUM_ONE, function()
@@ -6,5 +7,7 @@ RegisterKeyBind(Key.NUM_ONE, function()
     -- patch:K2_SetActorLocation(CONHacker:K2_GetActorLocation(), false, nil, true)
 end)
 
-LoopAsync(CheatUpdateDelay, function()
-end)
+if CheatsEnabled then
+    LoopAsync(CheatUpdateDelay, function()
+    end)
+end
