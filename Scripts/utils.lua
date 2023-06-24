@@ -15,7 +15,7 @@ function GetHackerInventory()
 end
 
 function GetBag()
-	return HackerInventory.Bags[1]
+	return GetHackerInventory().Bags[1]
 end
 
 function GetAttribs()
