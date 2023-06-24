@@ -32,7 +32,7 @@ RegisterConsoleCommandGlobalHandler("SetItemSlotCount", function(FullCommand, Pa
 end)
 
 RegisterConsoleCommandGlobalHandler("ToggleDebugCamera", function(FullCommand, Parameters, OutputDevice)
-	GISinglePlayer:ToggleDebugCamera()
+	GetGISinglePlayer():ToggleDebugCamera()
 	
 	return true
 end)
@@ -52,7 +52,7 @@ RegisterConsoleCommandGlobalHandler("GrantItem", function(FullCommand, Parameter
 		}
 		local result = {}
 		
-		GetBag():GrantItem(item, result)
+		GetHackerInventory():GrantItem(item, result)
 	else
 		print("Could not find a UObject for " .. Parameters[1])
 	end
@@ -67,11 +67,12 @@ RegisterConsoleCommandGlobalHandler("SpawnObject", function(FullCommand, Paramet
 	local obj = StaticFindObject(Parameters[1])
 	
 	if obj:IsValid() then
-		local pos = PAWNHackerImplant:K2_GetActorLocation()
+		local hacker = FindFirstOf("ShockPlayerController")
+		local pos = hacker:K2_GetPawn():K2_GetActorLocation()
 		local rot = { X = 0, Y = 0, Z = 0, W = 0 }
-
+		
 		for i = 1, tonumber(Parameters[2]) or 1 do
-			CONHacker:GetWorld():SpawnActor(obj, pos, rot)
+			hacker:GetWorld():SpawnActor(obj, pos, rot)
 		end
 	else
 		print("Could not find a UObject for " .. Parameters[1])
@@ -81,67 +82,67 @@ RegisterConsoleCommandGlobalHandler("SpawnObject", function(FullCommand, Paramet
 end)
 
 RegisterConsoleCommandGlobalHandler("RevealMap", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:RevealMap()
+	GetHacker():RevealMap()
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("RefillVitals", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:RefillVitals()
+	GetHacker()RefillVitals()
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("SetDetectable", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:SetDetectable(IsBool(Parameters[1]))
+	GetHacker():SetDetectable(IsBool(Parameters[1]))
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("SetGodMode", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:SetGodMode(IsBool(Parameters[1]))
+	GetHacker():SetGodMode(IsBool(Parameters[1]))
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("TeleportToTerminalByIndex", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:TeleportToTerminalByIndex(Parameters[1])
+	GetHacker():TeleportToTerminalByIndex(Parameters[1])
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("TeleportToElevatorByIndex", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:TeleportToElevatorByIndex(Parameters[1])
+	GetHacker():TeleportToElevatorByIndex(Parameters[1])
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("TeleportToLocation", function(FullCommand, Parameters, OutputDevice)
-	CONHacker:TeleportToLocation(Parameters[1], Parameters[2], Parameters[3])
+	GetHacker():TeleportToLocation(Parameters[1], Parameters[2], Parameters[3])
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("DestroyComputerNodes", function(FullCommand, Parameters, OutputDevice)
-	GMSinglePlayer:CmdDestroyComputerNodes()
+	GetGMSinglePlayer():CmdDestroyComputerNodes()
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("KillEnemies", function(FullCommand, Parameters, OutputDevice)
-	GMSinglePlayer:CmdKillEnemies()
+	GetGMSinglePlayer():CmdKillEnemies()
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("KillCameras", function(FullCommand, Parameters, OutputDevice)
-	GMSinglePlayer:CmdKillCameras()
+	GetGMSinglePlayer():CmdKillCameras()
 	
 	return true
 end)
 
 RegisterConsoleCommandGlobalHandler("SetCombatIntensity", function(FullCommand, Parameters, OutputDevice)
-	GISinglePlayer:SetCurrentCombatIntensity(tonumber(Parameters[1]))	
+	GetGISinglePlayer():SetCurrentCombatIntensity(tonumber(Parameters[1]))	
 	
 	return true
 end)

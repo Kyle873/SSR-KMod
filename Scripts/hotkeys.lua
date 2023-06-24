@@ -1,11 +1,11 @@
 RegisterKeyBind(Key.DEL, function()
-	CONHacker:RefillVitals()
+	GetHacker():RefillVitals()
 end)
 
 RegisterKeyBind(Key.HOME, function()
 	--[[
 	local pickups = FindAllOf("PICKUP_Base_C")
-	local pos = PAWNHackerImplant:K2_GetActorLocation()
+	local pos = GetHackerPawn():K2_GetActorLocation()
 
 	print("Pickups: " .. tostring(#pickups))
 	for k, v in pairs(pos) do

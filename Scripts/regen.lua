@@ -1,10 +1,10 @@
-HealthRegenEnabled = false
+HealthRegenEnabled = true
 HealthRegenDelay = 10000
-EnergyRegenEnabled = false
+EnergyRegenEnabled = true
 EnerygRegenDelay = 2000
 
 LoopAsync(HealthRegenDelay, function()
-    if PAWNHackerImplant ~= nil and HealthRegenEnabled then
+    if HealthRegenEnabled and GetHackerPawn() ~= nil then
         local health = GetAttribs().Health:GetValue()
             
         GetAttribs().Health:SetBaseValue(health + 1)
@@ -12,7 +12,7 @@ LoopAsync(HealthRegenDelay, function()
 end)
 
 LoopAsync(EnerygRegenDelay, function()
-    if PAWNHackerImplant ~= nil and EnergyRegenEnabled then
+    if EnergyRegenEnabled and GetHackerPawn() ~= nil then
         local energy = GetAttribs().Energy:GetValue()
         
         GetAttribs().Energy:SetBaseValue(energy + 1)
