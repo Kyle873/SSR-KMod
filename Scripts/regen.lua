@@ -1,6 +1,6 @@
-HealthRegenEnabled = true
+HealthRegenEnabled = false
 HealthRegenDelay = 10000
-EnergyRegenEnabled = true
+EnergyRegenEnabled = false
 EnerygRegenDelay = 2000
 
 LoopAsync(HealthRegenDelay, function()

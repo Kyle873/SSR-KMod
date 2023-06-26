@@ -38,6 +38,7 @@ SetGodMode (on/off)
 TeleportToTerminalByIndex (index)
 TeleportToElevatorByIndex (index)
 TeleportToLocation (x) (y) (z)
+SetDifficulty (combat) (mission) (cyber) (puzzle)
 DestroyComputerNodes
 KillEnemies
 KillCameras

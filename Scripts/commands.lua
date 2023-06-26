@@ -123,6 +123,18 @@ RegisterConsoleCommandGlobalHandler("TeleportToLocation", function(FullCommand, 
 	return true
 end)
 
+RegisterConsoleCommandGlobalHandler("MoveToFloor", function(FullCommand, Parameters, OutputDevice)
+	-- TODO
+	
+	return true
+end)
+
+RegisterConsoleCommandGlobalHandler("SetDifficulty", function(FullCommand, Parameters, OutputDevice)
+	GetGISinglePlayer():SetDifficultyValues(tonumber(Parameters[1]), tonumber(Parameters[2]), tonumber(Parameters[3]), tonumber(Parameters[4]))
+	
+	return true
+end)
+
 RegisterConsoleCommandGlobalHandler("DestroyComputerNodes", function(FullCommand, Parameters, OutputDevice)
 	GetGMSinglePlayer():CmdDestroyComputerNodes()
 	
