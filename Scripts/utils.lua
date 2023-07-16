@@ -48,6 +48,16 @@ function GetBag()
 	end
 end
 
+function GetScanner()
+	local result = FindFirstOf("COMP_Scanner_C")
+	
+	if result:IsValid() then
+		return result
+	else
+		error("Could not find COMP_Scanner_C!")
+	end
+end
+
 function GetAttribs()
 	if GetHackerPawn():IsValid() then
 		return
@@ -88,4 +98,18 @@ function GetElevator()
 	else
 		error("Could not find ELEVATOR_Base_C!")
 	end
+end
+
+function GetLastCursorActor()
+	local result = {}
+	
+	GetScanner():GetLastCursorActor(result)
+
+	if result.Actor:IsValid() then
+		print("Last Actor Cursor: " .. result.Actor:GetName())
+	else
+		error("COMP_Scanner_C:GetLastCursorActor() found no Actor!")
+	end
+
+	return result
 end
