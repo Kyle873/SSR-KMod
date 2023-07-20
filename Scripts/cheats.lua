@@ -10,9 +10,11 @@ RegisterKeyBind(Key.NUM_ONE, function()
 	GetHacker():RefillVitals()
 end)
 
+--[[ This breaks a lot for now
 RegisterKeyBind(Key.NUM_TWO, function()
 	GetGMSinglePlayer():CmdKillEnemies()
 end)
+--]]
 
 RegisterKeyBind(Key.NUM_SEVEN, function()
 	--[[
